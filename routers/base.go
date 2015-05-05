@@ -2,10 +2,13 @@
 package routers
 
 import (
-	"fmt"
+	"net/http"
+
+	"github.com/labstack/echo"
+	mw "github.com/labstack/echo/middleware"
 )
 
-func Home(c *webfw.Context) error {
+func Home(c *echo.Context) error {
 	return c.JSON(http.StatusOK, map[string]interface{}{"Code": 0, "Msg": "Request Succeed", "Data": APP_VER})
 }
 
